@@ -1,0 +1,30 @@
+
+/*///////////////////////////////////////activité ///////////////////////////////////*/
+
+.oc-img-get_act-momo
+{
+  width: 100%;
+  height: 200px; 
+}
+.bo-sav
+{
+	margin-top: 7%;
+}
+#tabact
+{
+	width: 100%;
+    height: 130px;
+}
+.imgact
+{
+	width: 220px;
+}
+.oc-section-date-activite
+{
+	align-self: flex-end;
+	padding-bottom: 17px;
+}
+.oc-h1-activite
+{
+	margin-bottom: 50px;
+}

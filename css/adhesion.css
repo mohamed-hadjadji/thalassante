@@ -1,0 +1,83 @@
+
+
+@font-face {
+   
+}
+@media screen and (min-width: 1000px)
+{
+.oc-article-adhesion
+{
+	background-color: #FFD007;
+	padding-bottom: 2%;
+}
+.oc-h1-adhesion
+{
+	padding-top: 2%;
+	 font-family: "Poppins";
+    src: url('../fonts/poppins/Poppins-Bold.ttf');
+	color: white;
+	text-align: center;
+	font-size: 60px;
+}
+.oc-p-adhesion
+{   
+	font-size: 30px;
+	color: white;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+.oc-liens-p-adhesion
+{
+	    background-color: white;
+    width: 200px;
+    text-align: center;
+   
+    margin: auto;
+    font-family: nunito,black-sans sans-serif;
+    font-size: 22px;
+}
+.oc-liens-a-adhesion
+{
+	 color: #ffd007;
+}
+
+}
+
+
+@media screen and (max-width: 1000px)
+{
+
+.oc-article-adhesion
+{
+	background-color: #FFD007;
+	padding-bottom: 2%;
+}
+.oc-h1-adhesion
+{
+	padding-top: 2%;
+	 font-family: "Poppins";
+    src: url('../fonts/poppins/Poppins-Bold.ttf');
+	color: white;
+	text-align: center;
+	font-size: 60px;
+}
+.oc-p-adhesion
+{   
+	font-size: 30px;
+	color: white;
+}
+.oc-liens-p-adhesion
+{
+	    background-color: white;
+    width: 200px;
+    text-align: center;
+   
+    margin: auto;
+    font-family: nunito,black-sans sans-serif;
+    font-size: 22px;
+}
+.oc-liens-a-adhesion
+{
+	 color: #ffd007;
+}
+	}

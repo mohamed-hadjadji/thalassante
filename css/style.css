@@ -1,0 +1,240 @@
+@font-face {
+    
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+
+@media only screen and (min-width: 1070px){
+.pre-act{
+	
+	background-color: #F29108;
+	color: white;
+	font-family: 'Nunito-Regular', arial;
+}
+.pre-act h1{
+	font-size: 60px;
+	text-align: center;
+	margin-bottom:100px;
+	padding-top: 2%;
+}
+#para-act{
+	display: flex;
+	justify-content: center;
+}
+.oc-p-act{
+	font-size: 30px;
+	width: 1760px;
+	margin-left: 146px;
+    margin-right: 146px;
+}
+#suite-act{
+	display: flex;
+	justify-content: center;
+}
+#flech-act{
+	display: flex;
+	justify-content: center;
+}
+#oc-para-act-cacher
+{
+    display: none;
+    word-wrap: break-word;
+}
+
+.bloc-act{
+	display: flex;
+    justify-content: space-around;
+    margin: 35px;
+}
+#year{
+	background-color: #F1F8FB;
+	height: 304px;
+}
+#year::-webkit-scrollbar-thumb{
+	background-color: #F29108;
+	
+}
+#year::-webkit-scrollbar{
+	width: 10px;
+   
+}
+#year option{
+	color:#F29108;
+	font-size: 16px;
+	
+}
+#option{
+	color: white;
+	font-size: 22px;
+	background-color: #F29108;	
+	border-color: #F29108;
+	width: 100px;
+	height: 38px;
+	
+}
+.bo-coul{
+	width: 215px;
+    font-size: 13px;
+    margin-left: 1%;
+}
+#activ{
+	display: flex;
+	justify-content: space-around;
+}
+
+.cont{
+	width: 220px;
+	margin: 16px;
+	margin-top: 0;
+	font-family: 'Nunito-Regular', arial;
+}
+.titac{
+	color: #F29108;
+	padding-top: 15px;
+	height: 350px;
+
+}
+.titre{
+	font-size: 28px;
+}
+.text{
+	font-size: 13px;
+}
+
+#fich a{
+   text-decoration: none;
+   background-color: #F29108;
+   color: white;
+   padding: 3px; 
+}
+.bo-sav{
+color: white;
+    font-size: 13px;
+    background-color: #F29108;
+    border-color: #F29108;
+    width: 111px;
+    height: 26px;
+}
+#tabact{
+	width: 330px;
+    height: 240px;
+}
+#tabact tr{
+	border-bottom: 7px solid #F1F8FB;	
+	height: 50px;
+	width: 50px;
+}
+#tabact td{
+	border-right: 7px solid #F1F8FB;
+	width: 25%;
+}
+.but{
+	padding: 18px;
+	border: 0;
+	width: 50px;
+    height: 50px;
+}
+.tous{
+	
+	color: white;
+    font-size: 13px;
+    border-color: #F29108;
+    height: 36px;
+    width: 95px;
+}
+.custom-select
+{
+	border: 0;
+
+}
+
+.ui-datepicker-calendar {
+   display: none;
+}
+.ui-datepicker-month {
+   display: none;
+}
+.ui-datepicker-next,.ui-datepicker-prev {
+  display:none;
+}
+}
+
+/*carrousel*/
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.carousel-control { 
+    width: 8%;
+    width: 0px;
+}
+.carousel-control.left,
+.carousel-control.right { 
+    margin-right: 40px;
+    margin-left: 32px; 
+    background-image: none;
+    opacity: 1;
+}
+.carousel-control > a > span {
+    color: white;
+      font-size: 29px !important;
+}
+
+.carousel-col { 
+    position: relative; 
+    min-height: 1px; s
+    padding: 5px; 
+    float: left;
+ }
+
+ .active > div { display:none; }
+ .active > div:first-child { display:block; }
+
+/*xs*/
+@media (max-width: 767px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+    .carousel-inner .next        { left:  50%; }
+    .carousel-inner .prev            { left: -50%; }
+  .carousel-col                { width: 50%; }
+    .active > div:first-child + div { display:block; }
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+    .carousel-inner .next        { left:  50%; }
+    .carousel-inner .prev            { left: -50%; }
+  .carousel-col                { width: 50%; }
+    .active > div:first-child + div { display:block; }
+}
+
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .carousel-inner .active.left { left: -33%; }
+  .carousel-inner .active.right { left: 33%; }
+    .carousel-inner .next        { left:  33%; }
+    .carousel-inner .prev            { left: -33%; }
+  .carousel-col                { width: 33%; }
+    .active > div:first-child + div { display:block; }
+  .active > div:first-child + div + div { display:block; }
+}
+
+/*lg*/
+@media (min-width: 1200px) {
+  .carousel-inner .active.left { left: -25%; }
+  .carousel-inner .active.right{ left:  25%; }
+    .carousel-inner .next        { left:  25%; }
+    .carousel-inner .prev            { left: -25%; }
+  .carousel-col                { width: 25%; }
+    .active > div:first-child + div { display:block; }
+  .active > div:first-child + div + div { display:block; }
+    .active > div:first-child + div + div + div { display:block; }
+}
+
+.block {
+    width: 306px;
+    height: 230px;
+}

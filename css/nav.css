@@ -1,0 +1,431 @@
+
+
+
+html, body
+{
+	height: 100%;
+	width:100%;
+	padding: 0;
+	margin: 0;
+}
+
+.my-sticky{
+  position: -webkit-sticky;
+  position: sticky;
+
+}
+
+
+nav
+{
+  z-index: 1021;
+}
+
+@media only screen and (min-width: 1700px){
+
+
+#menuToggle
+{
+  display: none;
+}
+
+
+
+.oc-div-nav-global
+{
+  
+  background-color: white;
+   display: flex;
+  flex-direction: row;
+  color: black;
+  justify-content: space-around;
+  border: solid 2px;
+    margin: 1%;
+}
+.oc-section-nav
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+ 
+}
+.oc-article-nav
+{
+  border-bottom: 2px solid black;
+  display: flex;
+  
+  width: 100%;
+}
+.oc-article-nav2
+{
+
+  display: flex;
+  
+  width: 100%;
+}
+.oc-div-nav
+{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.oc-ul-nav
+{
+  
+  font-size: 35px;
+  display: flex;
+  list-style: none;
+  width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+.oc-li-nav
+{
+  font-family: 'poppins','sans-serif';
+  font-weight: medium;
+}
+
+.oc-img-loupe-nav
+{
+  height: 50px;
+  margin: auto;
+}
+.oc-img-blok-nav
+{
+  height: 100px;
+ 
+    margin: 0;
+}
+.oc-a-nav
+{
+    text-decoration-line: none;
+  text-decoration:none;
+
+
+    margin: auto;
+ 
+    color: black;
+  height:100%;
+  align-items: center;
+  display: flex;
+}
+.oc-a-nav :hover
+{
+   text-decoration: overline;
+  text-decoration:none;
+}
+.oc-div-img-nav-loupe
+{
+  text-align: center;
+  width: 22%;
+}
+.oc-img-a-block-nav
+{
+  margin: 0;
+  padding: 0;
+   border-left: 2px black solid;
+}
+.oc-li-agenda
+{
+
+  width: 163px;
+  margin-left: 35px;
+}
+.oc-li-evnement
+{
+  padding-left: 117px;
+    margin-right: -26px;
+}
+.oc-li-evenement-nav
+{
+
+}
+.oc-li-contact-nav
+{
+  padding-right: 36PX;
+}
+
+
+/*-----------hover-----------navt text */
+.oc-a-presentation-nav :hover
+{
+  
+  color: #009BB5;
+  
+
+}
+.oc-a-image-nav :hover
+{
+
+  color:#6F544E;
+}
+.oc-a-lieu-nav :hover
+{
+color :#00998D;
+}
+.oc-a-activite-nav :hover
+{
+  color: #F29108;
+}
+.oc-a-agenda-nav :hover
+{
+  color: #009649;
+}
+.oc-a-evenement-nav :hover
+{
+  color: #E40C50;
+}
+.oc-a-adere-nav :hover
+{
+  color: #FFD007;
+}
+/*------------surpression des deco a----------------*/
+#oc-presentation-nav
+{
+  text-decoration-line: none;
+  text-decoration:none; 
+}
+#oc-image-nav
+{
+ text-decoration-line: none;
+ text-decoration:none;
+}
+#oc-lieu-nav
+{
+ text-decoration-line: none;
+ text-decoration:none;
+}
+#oc-a-activite-nav
+{
+ text-decoration-line: none;
+ text-decoration:none;
+}
+#oc-a-agenda-nav
+{
+  text-decoration-line: none;
+  text-decoration:none;
+}
+#oc-a-envenement-nav
+{
+  text-decoration-line: none;
+  text-decoration:none;  
+}
+#oc-a-adere-nav
+{
+  text-decoration-line: none;
+  text-decoration:none;
+}
+#oc-a-contact-nav
+{
+  text-decoration-line: none;
+  text-decoration:none;
+}
+}
+
+
+@media only screen and (min-width: 1000px) and  (max-width: 1700px){
+  #menuToggle
+{
+display: none;
+}
+.oc-div-nav-global
+{
+  
+  background-color: white;
+   display: flex;
+  flex-direction: row;
+  color: black;
+  justify-content: space-around;
+  border: solid 2px;
+  margin: 1%;
+}
+.oc-section-nav
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+ 
+}
+.oc-article-nav
+{
+  border-bottom: 2px solid black;
+  display: flex;
+
+  width: 100%;
+}
+.oc-article-nav2
+{
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.oc-div-nav
+{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.oc-ul-nav
+{
+  
+  font-size: 30px;
+  display: flex;
+  list-style: none;
+  width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+.oc-li-nav
+{
+  font-family: 'poppins','sans-serif';
+  font-weight: medium;
+}
+.oc-li-evenement-nav
+{
+  margin-left: 20px;
+}
+.oc-img-loupe-nav
+{
+  height: 50px;
+  margin: auto;
+}
+.oc-img-blok-nav
+{
+  height: 100px;
+ 
+    margin: 0;
+}
+.oc-a-nav
+{
+    text-decoration-line: none;
+  text-decoration:none;
+
+
+    margin: auto;
+ 
+    color: black;
+  height:100%;
+  align-items: center;
+  display: flex;
+}
+.oc-a-nav :hover
+{
+   text-decoration: overline;
+  text-decoration:none;
+}
+.oc-div-img-nav-loupe
+{
+  text-align: center;
+  width: 22%;
+}
+.oc-img-a-block-nav
+{
+  margin: 0;
+  padding: 0;
+   border-left: 2px black solid;
+}
+.oc-li-agenda
+{
+
+  width: 163px;
+  margin-left: 35px;
+}
+.oc-li-evnement
+{
+  margin-left: 0px;
+    margin-right: -26px;
+}
+.oc-li-evenement-nav
+{
+
+}
+.oc-li-contact-nav
+{
+  padding-right: 36PX;
+}
+
+
+/*-----------hover-----------navt text */
+.oc-a-presentation-nav :hover
+{
+  
+  color: #009BB5;
+  
+
+}
+.oc-a-image-nav :hover
+{
+
+  color:#6F544E;
+}
+.oc-a-lieu-nav :hover
+{
+color :#00998D;
+}
+.oc-a-activite-nav :hover
+{
+  color: #F29108;
+}
+.oc-a-agenda-nav :hover
+{
+  color: #009649;
+}
+.oc-a-evenement-nav :hover
+{
+  color: #E40C50;
+}
+.oc-a-adere-nav :hover
+{
+
+  color: #FFD007;
+}
+#oc-presentation-nav
+{
+  text-decoration-line: none;
+  text-decoration:none; 
+}
+#oc-image-nav
+{
+ text-decoration-line: none;
+ text-decoration:none;
+}
+#oc-lieu-nav
+{
+ text-decoration-line: none;
+ text-decoration:none;
+}
+#oc-a-activite-nav
+{
+ text-decoration-line: none;
+ text-decoration:none;
+}
+#oc-a-agenda-nav
+{
+  text-decoration-line: none;
+  text-decoration:none;
+}
+#oc-a-envenement-nav
+{
+  text-decoration-line: none;
+  text-decoration:none;  
+}
+#oc-a-adere-nav
+{
+  text-decoration-line: none;
+  text-decoration:none;
+}
+#oc-a-contact-nav
+{
+  text-decoration-line: none;
+  text-decoration:none;
+}
+
+.oc-nav-input{
+  visibility: hidden;
+}
+}
+
+

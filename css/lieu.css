@@ -1,0 +1,149 @@
+
+.oc-lieu-parah
+{
+font-family: Nunito-Relugar,sans-serif;
+    color: #00998D;
+    padding-top: 190px;
+    padding-left: 146px;
+    padding-right: 146px;
+    text-align: left;
+    line-height: 41px;
+    font-size: 33px;
+    margin-bottom: 0;
+}
+.oc-h1-lieu
+{
+       margin-top: 21px;
+    font-style: 60px;
+    color: #00998D;
+    text-align: center;
+    margin-bottom: 41px;
+    font-size: 60px;
+    font-family: Nunito, Black 900;
+
+}
+.oc-article-lieux
+{
+	display: flex;
+	flex-direction: column;
+}
+.oc-quatre-bouton
+{
+	display: flex;
+    flex-direction: row;
+    width: 548px;
+    justify-content: space-between;
+    margin: auto;
+   margin-bottom: 33px;
+}
+.oc-button-par-quatre
+{
+width: 128px;
+    height: 45px;
+    background-color: #00998D;
+    border: none;
+    color: white;
+}
+.oc-bouton-lieu-cont
+{
+
+width: 122px;
+    height: 48px;
+
+    margin-bottom: 6px;
+    margin-top: 0px;
+    border: none;
+}
+.oc-div-liste-butt
+{
+		display: flex;
+	flex-direction: row;
+	align-items: center;
+	    margin-left: 150px;
+
+}
+/*.back-test
+{
+
+	background-image: url("../images/background/Website_THALA_ACCUEIL_Lieu_ACTIF.jpg");
+	background-size: 100%;
+
+}*/
+.oc-p-nom-block
+{
+	margin-left: 35px;
+    padding-top: 10px;
+}
+.oc-display-img-lieux
+{
+	display: flex;
+	flex-direction: row;
+}
+.oc-img-lieux-site
+{
+    width: 53%;
+    z-index: -2;
+}
+.oc_img_lieux_bdd
+{
+    width: 100%;
+}
+.oc-img-lieu
+{
+    width: 70%;
+}
+.oc-text-lieu
+{
+    width: 100%;
+}
+.oc-zone
+{
+    display: flex;
+    align-items: center;
+}
+#oc-info-lieu
+{
+    width: 80%;
+    margin:auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.oc-desc-lieu
+{
+    padding-left: 2%;
+}
+.oc_img_tous
+{
+    width: 100%;
+}
+.oc_img_lieu_communs
+{
+    width: 100%;
+}
+.oc-img-service-lieu
+{
+width: 100%;
+}
+
+/*.calque
+{
+    background-image: url(image/background/Website_THALA_ACCUEIL_Lieu_ACTIF.jpg);
+
+}
+*/
+
+
+
+
+
+
+
+
+.color1
+{
+  background-color: #00998D;  
+}
+.color1a
+{
+    color: red;
+}

@@ -1,0 +1,19 @@
+
+@media screen and (min-width: 1000px)
+{
+
+.oc-taille-caroussele
+{
+	    height: 440px
+}
+
+}
+
+@media screen and (min-width: 1000px)
+{
+	.oc-taille-caroussele
+{
+	    height: 210px
+}
+
+}
