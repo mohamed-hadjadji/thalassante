@@ -111,49 +111,7 @@ if(isset($_GET['deconnexion']))
 		<!-------------------------------------FIN DE PRESENTATION---------------------------->
 		<!---------------------------NAV---------------->
 		
-            <!-- ----------------------------CAROUSSEL BOOTSTRAP fonction --->
-            <form method="POST" enctype="multipart/form-data" action="">
-			<article >
-				<div id="carouselExampleSlidesOnly" class="carousel slide " data-ride="carousel">
-					<div class="oc-taille-caroussele  carousel-inner">
-						<div class="carousel-item active">	
-						<?php if (isset($_SESSION['user'])) {											
-				echo "<input name='carou_1' type='file'>"; }?><img  src="<?php en_image1(); ?>" class="d-block w-100" alt="..."><?php   if (isset($_SESSION['user'])) { echo "</input>" ; }	?>
-						</div> 
-					 	<div class="carousel-item ">							
-					 				<?php if (isset($_SESSION['user'])) {											
-				echo "<input name='carou_2' type='file'>"; }?><img id="" src="<?php en_image2(); ?>" class="d-block w-100" alt="..."><?php   if (isset($_SESSION['user'])) { echo "</input>" ; }	?>
-						</div>
-						<div class="carousel-item">
-     							<?php if (isset($_SESSION['user'])) {											
-				echo "<input name='carou_3' type='file'>"; }?><img id="" src="<?php en_image3(); ?>" class="d-block w-100" alt="..."><?php   if (isset($_SESSION['user'])) { echo "</input>" ; }	?>
-						</div> 
-					</div>
-				</div>
-			</article>
-			<article>
-			
-			  <!-- -----------------session admin en image--------------- -->
-<?php if (isset($_SESSION['user'])) { ?>
-	
 
-	
-		 
-		<input type="submit" name="validation_en_image"> 
-	</form>
-
-	<!-- <button id="LoadImage" onclick="LoadImgs()">validation_en_image</button> -->
-<?php
-
-if (isset($_POST['validation_en_image'])) 
-	{
-        if (is_uploaded_file($_FILES['carou_1']['tmp_name']) )
-           {
-	         modif_en_image();
-           }
-	}
- } ?>
-		</article >
 
 		<!-- <section  class="claque"> -->
 	<!--------------------------------------------------------------PARTIE DE LIEU---------------------------------------------------->
