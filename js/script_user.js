@@ -46,47 +46,6 @@ $(document).ready(function (e) {
         $(".ui-datepicker-month").hide();
     });
 });
-  
-  //valider
- $("#form").on('submit',(function(e) {
-  e.preventDefault();
-  var form_data = new FormData(this);
-
-  $.ajax({
-   url: "classe/fonction.php",
-   type: "POST",
-   data: form_data,  
-
-   contentType: false,
-         cache: false,
-   processData:false,
-   beforeSend : function()
-   {
-    //$("#preview").fadeOut();
-    $("#err").fadeOut();
-   },
-   success: function(data)
-      {
-
-    if(data=='invalid')
-    {
-     // invalid file format.
-     $("#err").html("Invalid File !").fadeIn();
-    }
-    else
-    {
-     // view uploaded file.
-     $("#preview").html(data).fadeIn();
-     $("#form")[0].reset(); 
-    }
-     get_act();
-      },
-     error: function(e) 
-      {
-    $("#err").html(e).fadeIn();
-      }          
-    });
- }));
 });
 
 //////change le logofleche du bas de activités
@@ -104,10 +63,28 @@ $(document).ready(function (e) {
               }
 
     }
+function carrousel()
+{
+   $('.carousel[data-type="multi"] .item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+        
+        for (var i=0;i<2;i++) {
+          next=next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          
+          next.children(':first-child').clone().appendTo($(this));
+        }
+      });
+}
 
 function get_act()
 {
-  console.log("ok");
  
   $.ajax({
     method: "POST",
@@ -158,24 +135,10 @@ function get_act()
           });
         
       }
-      $('.carousel[data-type="multi"] .item').each(function(){
-        var next = $(this).next();
-        if (!next.length) {
-          next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-        
-        for (var i=0;i<2;i++) {
-          next=next.next();
-          if (!next.length) {
-            next = $(this).siblings(':first');
-          }
-          
-          next.children(':first-child').clone().appendTo($(this));
-        }
-      });
+     carrousel();
     }
   })
+
 }
 
 
@@ -195,11 +158,31 @@ function get_incub(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-        
+           if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -213,6 +196,7 @@ function get_incub(){
           });
 
       }
+      carrousel();
     }
   })
 })
@@ -228,11 +212,31 @@ function get_marit(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+          if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -245,6 +249,7 @@ function get_marit(){
           });
           });
       }
+      carrousel();
     }
   })
 })
@@ -260,11 +265,31 @@ function get_social(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+           if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -278,6 +303,7 @@ function get_social(){
           });
 
       }
+      carrousel();
     }
   })
 })
@@ -293,11 +319,31 @@ function get_territoire(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+           if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -310,6 +356,7 @@ function get_territoire(){
           });
           });
       }
+      carrousel();
     }
   })
 })
@@ -325,11 +372,31 @@ function get_environ(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+           if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -343,6 +410,7 @@ function get_environ(){
           });
 
       }
+      carrousel();
     }
   })
 })
@@ -358,11 +426,31 @@ function get_sport(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+           if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -376,6 +464,7 @@ function get_sport(){
           });
 
       }
+      carrousel();
     }
   })
 })
@@ -391,11 +480,31 @@ function get_art(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+          if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -409,6 +518,7 @@ function get_art(){
           });
 
       }
+      carrousel();
     }
   })
 })
@@ -424,11 +534,31 @@ function get_pedago(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+          if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -442,6 +572,7 @@ function get_pedago(){
           });
 
       }
+      carrousel();
     }
   })
 })
@@ -457,11 +588,31 @@ function get_construct(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+           if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -474,6 +625,7 @@ function get_construct(){
           });
           });
       }
+      carrousel();
     }
   })
 })
@@ -489,11 +641,31 @@ function get_cuisine(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+           if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -507,6 +679,7 @@ function get_cuisine(){
           });
 
       }
+      carrousel();
     }
   })
 })
@@ -522,11 +695,31 @@ function get_recherche(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+           if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -539,6 +732,7 @@ function get_recherche(){
           });
           });
       }
+      carrousel();
     }
   })
 })
@@ -555,11 +749,31 @@ function get_year(){
     success: function(datatype){
 
       $('.cont').remove();
-
+      $('#activy').empty();
       var act = JSON.parse(datatype);
       for (var i = 0; i < act.length; i++){
-        $('#activ').append('<div class="cont" id="geta' + i +'"><div class="imgact"><img class="oc-img-get_act-momo" src="classe/'+ act[i]["image"] +'"></div><div class="titac"><h5 class="titre"><b>' + act[i]["titre"] +'</b></h5><p class="text">' + act[i]["description"] +'</p></div><div id="fich"><button id="affic'+ act[i]['id'] +'" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic'+ act[i]['id'] +'"><img height="900" src="classe/'+ act[i]["affiche"] +'"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color: '+ act[i]["incubation"] +';"></td><td style="background-color: '+ act[i]["maritime"] +';"></td><td style="background-color: '+ act[i]["social"] +';"></td><td style="background-color: '+ act[i]["territoire"] +';"></td></tr><tr><td style="background-color: '+ act[i]["environ"] +';"></td><td style="background-color: '+ act[i]["sport"] +';"></td><td style="background-color: '+ act[i]["art"] +';"></td><td style="background-color: '+ act[i]["pedago"] +';"></td></tr><tr><td style="background-color: '+ act[i]["construc"] +';"></td><td style="background-color: '+ act[i]["cuisine"] +';"></td><td style="background-color: '+ act[i]["recherche"] +';"></td><td></td></tr></table></div></div>' );
-      
+          if ( i == 0 ){
+          $("#activy").append(`
+          <div id="geta${i}" class="item active">
+            <div class="carousel-col">
+              <div class="block">
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+              </div>
+            </div>
+          </div>
+          `)
+        }
+        else {
+          $("#activy").append(`
+            <div id="geta${i}" class="item">
+              <div class="carousel-col">
+                <div class="block">
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                </div>
+              </div>
+            </div>
+          `)
+        }
         $(function() {
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
@@ -573,6 +787,7 @@ function get_year(){
           });
 
       }
+      carrousel();
     }
   })
 })

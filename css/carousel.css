@@ -9,8 +9,9 @@
 }
 .carousel-control.left,
 .carousel-control.right { 
-    margin-right: 40px;
-    margin-left: 32px; 
+   margin-right: -8%;
+    margin-left: -45%;
+    margin-top: 400px;
     background-image: none;
     opacity: 1;
 }
@@ -24,6 +25,7 @@
     min-height: 1px; 
     padding: 5px; 
     float: left;
+
  }
 
  .active > div { display:none; }

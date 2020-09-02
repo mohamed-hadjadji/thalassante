@@ -145,7 +145,7 @@
 				        <option value="2013">2013</option>
 				        <option value="2012">2012</option>
 				        <option value="2011">2011</option>
-				        <option value="2020">2010</option>             
+				        <option value="2010">2010</option>             
 				    </select>
 				    <button id="option">Valider</button>
 	      
@@ -191,36 +191,12 @@
 			</section>
 			
 			<section class="activites">
-				<!-- <div class="container">
-					<div class="row">
-						<div class="col-xs-11 col-md-10 col-centered">
-
-							<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2500">
-								<div class="carousel-inner" id="activ">
-									
-								</div>
-								<div class="left carousel-control">
-									<a href="#carousel" role="button" data-slide="prev">
-										<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-										<span class="sr-only">Previous</span>
-									</a>
-								</div>
-								<div class="right carousel-control">
-									<a href="#carousel" role="button" data-slide="next">
-										<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-										<span class="sr-only">Next</span>
-									</a>
-								</div>
-			                </div>
-
-		                </div>
-	                </div>
-				</div> -->
+				
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-11 col-md-10 col-centered">
 
-							<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2500">
+							<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="0">
 								<div id="activy" class="carousel-inner">
 									<!-- CONTENU DU SLIDER MULTI ITEMS GÉNÉRÉ PAR SCRIPT_USER.JS -->
 								</div>
@@ -228,13 +204,13 @@
 								<!-- Controls -->
 								<div class="left carousel-control">
 									<a href="#carousel" role="button" data-slide="prev">
-										<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										<span class="glyphicon" aria-hidden="false"><img height="60" src="images/activite/Website_THALA_Flèche Gauche ORANGE.png"></span>
 										<span class="sr-only">Previous</span>
 									</a>
 								</div>
 								<div class="right carousel-control">
 									<a href="#carousel" role="button" data-slide="next">
-										<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+										<span class="glyphicon" aria-hidden="true"><img height="60" src="images/activite/Website_THALA_Flèche Droite ORANGE.png"></span>
 										<span class="sr-only">Next</span>
 									</a>
 								</div>
