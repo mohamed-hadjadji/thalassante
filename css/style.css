@@ -47,7 +47,7 @@
 }
 #year{
 	background-color: #F1F8FB;
-	height: 304px;
+	height: 230px;
 }
 #year::-webkit-scrollbar-thumb{
 	background-color: #F29108;
@@ -64,15 +64,15 @@
 }
 #option{
 	color: white;
-	font-size: 22px;
+	font-size: 13px;
+  border: 0;
 	background-color: #F29108;	
-	border-color: #F29108;
-	width: 100px;
-	height: 38px;
+	width: 120px;
+	height: 36px;
 	
 }
 .bo-coul{
-	width: 215px;
+	width: 270px;
     font-size: 13px;
     margin-left: 1%;
 }
@@ -111,8 +111,8 @@
 color: white;
     font-size: 13px;
     background-color: #F29108;
-    border-color: #F29108;
-    width: 111px;
+    border: 0;
+    width: 135px;
     height: 26px;
 }
 #tabact{
@@ -132,15 +132,16 @@ color: white;
 	padding: 18px;
 	border: 0;
 	width: 50px;
-    height: 50px;
+  height: 50px;
 }
 .tous{
 	
-	color: white;
+	  color: white;
     font-size: 13px;
-    border-color: #F29108;
+    border: 0;
     height: 36px;
     width: 95px;
+    margin-top: 63px;
 }
 .custom-select
 {
