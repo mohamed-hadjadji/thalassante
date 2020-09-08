@@ -3,7 +3,7 @@
 <html lang="fr">
 	<head>
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-       <link rel="stylesheet" href="css/carousel.css">
+       <link rel="stylesheet"  media="screen and (min-width: 1000px)" href="css/carousel.css">
 
 		<!-- <script type = "text/javascript" src="../js/test.js"></script> -->
   	
@@ -14,7 +14,7 @@
 			
 		</header>
 		<div class="pre-act">
-			<h1 class="oc-h1-activite"><b>ACTIVITES</b></h1>
+			<h1 class="oc-h1-activite"><b>ACTIVITÉS</b></h1>
 			<article class="oc-article-act">
 			    <div id="para-act">
 					<p class="oc-p-act">L’inscription sérielle de l'oeuvre architecturale de Le Corbusier sur la Liste du patrimoine mondial
@@ -54,7 +54,7 @@
 							</div>
 							<div class="form-group">
 								<label for="description">DESCRIPTION</label>
-								<textarea type="text" class="form-control" id="email" name="description" rows="6" maxlength="600" placeholder="Ajouter la Description" required></textarea>
+								<textarea type="text" class="form-control" id="email" name="description" rows="6" maxlength="400" placeholder="Ajouter la Description" required></textarea>
 							</div>
 							<div class="custom-file">
 							    <input type="file" class="custom-file-input" id="customFile" name="image" required/>
@@ -147,7 +147,7 @@
 				        <option value="2011">2011</option>
 				        <option value="2010">2010</option>             
 				    </select>
-				    <button id="option">Valider</button>
+				    <button id="option">SELECTIONNER</button>
 	      
 			</section>
 			<section class="bo-coul">

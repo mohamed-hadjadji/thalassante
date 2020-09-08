@@ -178,7 +178,7 @@ class activite
 	public function get_activite()
 	{
 		$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponseget = $connexion->query("SELECT * FROM activites");
         $reponseget->execute();
         $resultat = $reponseget->fetchAll(PDO::FETCH_ASSOC);
@@ -188,14 +188,14 @@ class activite
 	 public function del_activite($idact)
     {
         $connexion = new PDO('mysql:host=localhost;dbname=thalassante', 'root', '');
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $repensesup = $connexion->query("DELETE FROM activites WHERE id = '$idact'");
         $repensesup->execute();
     }
     public function get_incub()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponseinc = $connexion->query("SELECT * FROM activites WHERE incubation = '#AA3614'");
         $reponseinc->execute();
         $resulinc = $reponseinc->fetchAll(PDO::FETCH_ASSOC);
@@ -204,7 +204,7 @@ class activite
     public function get_marit()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponsemar = $connexion->query("SELECT * FROM activites WHERE maritime = '#D35315'");
         $reponsemar->execute();
         $resulmar = $reponsemar->fetchAll(PDO::FETCH_ASSOC);
@@ -213,7 +213,7 @@ class activite
     public function get_socia()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponsesoc = $connexion->query("SELECT * FROM activites WHERE social = '#EE7810'");
         $reponsesoc->execute();
         $resulsoc = $reponsesoc->fetchAll(PDO::FETCH_ASSOC);
@@ -223,7 +223,7 @@ class activite
     public function get_territ()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponseter = $connexion->query("SELECT * FROM activites WHERE territoire = '#6E473C'");
         $reponseter->execute();
         $resulter = $reponseter->fetchAll(PDO::FETCH_ASSOC);
@@ -233,7 +233,7 @@ class activite
     public function get_enviro()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponsenv = $connexion->query("SELECT * FROM activites WHERE 	environ = '#E8521F'");
         $reponsenv->execute();
         $resulenv = $reponsenv->fetchAll(PDO::FETCH_ASSOC);
@@ -243,7 +243,7 @@ class activite
     public function get_sport()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponsespo = $connexion->query("SELECT * FROM activites WHERE 	sport = '#E30E20'");
         $reponsespo->execute();
         $resulspo = $reponsespo->fetchAll(PDO::FETCH_ASSOC);
@@ -252,7 +252,7 @@ class activite
     public function get_art()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponseart = $connexion->query("SELECT * FROM activites WHERE 	art = '#F08574'");
         $reponseart->execute();
         $resulart = $reponseart->fetchAll(PDO::FETCH_ASSOC);
@@ -262,7 +262,7 @@ class activite
     public function get_pedag()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponseped = $connexion->query("SELECT * FROM activites WHERE 	pedago = '#E40C50'");
         $reponseped->execute();
         $resulped = $reponseped->fetchAll(PDO::FETCH_ASSOC);
@@ -272,7 +272,7 @@ class activite
     public function get_const()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponsecon = $connexion->query("SELECT * FROM activites WHERE 	construc = '#B2004B'");
         $reponsecon->execute();
         $resulcon = $reponsecon->fetchAll(PDO::FETCH_ASSOC);
@@ -282,7 +282,7 @@ class activite
     public function get_cuisin()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponsecui = $connexion->query("SELECT * FROM activites WHERE 	cuisine = '#D5328A'");
         $reponsecui->execute();
         $resulcui = $reponsecui->fetchAll(PDO::FETCH_ASSOC);
@@ -292,7 +292,7 @@ class activite
     public function get_recher()
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponserec = $connexion->query("SELECT * FROM activites WHERE 	recherche = '#C795C3'");
         $reponserec->execute();
         $resulrec = $reponserec->fetchAll(PDO::FETCH_ASSOC);
@@ -302,7 +302,7 @@ class activite
     public function get_year($year)
     {
     	$connexion = new PDO("mysql:host=localhost;dbname=thalassante", "root", "");
-        $connexion->exec("set names utf8");
+        //$connexion->exec("set names utf8");
         $reponsey = $connexion->query("SELECT * FROM activites WHERE 	date = '$year'");
         $reponsey->execute();
         $resuly = $reponsey->fetchAll(PDO::FETCH_ASSOC);
