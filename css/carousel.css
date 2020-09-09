@@ -7,14 +7,7 @@
     width: 8%;
     width: 0px;
 }
-.carousel-control.left,
-.carousel-control.right { 
-   margin-right: -8%;
-    margin-left: -45%;
-    margin-top: 400px;
-    background-image: none;
-    opacity: 1;
-}
+
 .carousel-control > a > span {
     color: white;
 	  font-size: 29px !important;

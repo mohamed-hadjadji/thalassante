@@ -47,10 +47,7 @@ if(isset($_GET['deconnexion']))
 	<!----------- police------------>
 	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 	 <!------------------------- LIENS CSS ----------------------->
-	 <!---------------------liens css momo--------------->
-	 <link rel="stylesheet" type="text/css" href="css/style.css">
-	 <!----------------------css olive ------------------->
-	 <link rel="stylesheet" type="text/css" href="css/activite.css">
+		 
 	 <link rel="stylesheet" type="text/css" href="css/adhesion.css">
 	<link rel="stylesheet" type="text/css" href="css/oc-presentation.css">
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 1000px)" href="css/lieu.css">
@@ -59,7 +56,7 @@ if(isset($_GET['deconnexion']))
 	<link rel="stylesheet" type="text/css" href="css/en_image.css">
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
 	<link rel="stylesheet" media="screen and (max-width: 1000px)" href="css/nav-tel.css" type="text/css" />
-	<link rel="stylesheet" media="screen and (max-width: 1070px)" href="css/activite-tel.css" type="text/css" />
+	
 	<link rel="stylesheet" media="screen and (max-width: 1000px)" href="css/lieu-tel.css" type="text/css" />
 
 	<title>thalassanté</title>

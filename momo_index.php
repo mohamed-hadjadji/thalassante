@@ -3,7 +3,10 @@
 <html lang="fr">
 	<head>
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-       <link rel="stylesheet"  media="screen and (min-width: 1000px)" href="css/carousel.css">
+       <link rel="stylesheet" href="css/carousel.css">
+       <link rel="stylesheet" type="text/css" href="css/style.css">
+       <link rel="stylesheet" type="text/css" href="css/activite.css">
+       <link rel="stylesheet" media="screen and (max-width: 1070px)" href="css/activite-tel.css" type="text/css" />
 
 		<!-- <script type = "text/javascript" src="../js/test.js"></script> -->
   	
@@ -151,41 +154,45 @@
 	      
 			</section>
 			<section class="bo-coul">
-				<div id="but-cont">
-					<button class="but" style="background-color: #AA3614;" id="incub" ></button> INCUBATION
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #D35315;" id="marit" ></button> MARITIME
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #EE7810;" id="socia" ></button> SOCIAL
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #6E473C;" id="terri" ></button> TERRITOIRE
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #E8521F;" id="envir" ></button> ENVIRONNEMENT
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #E30E20;" id="sport" ></button> SPORT
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #F08574;" id="art" ></button> ART
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #E40C50;" id="pedag" ></button> PEDAGOGIE
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #B2004B;" id="const" ></button> CONSTRUCTION
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #D5328A;" id="cuisi" ></button> CUISINE
-				</div></br>
-				<div id="but-cont">
-					<button class="but" style="background-color: #C795C3;" id="reche" ></button> RECHERCHE
-				</div></br>
-				<div id="but-cont">
-					<button class="tous" style="background-color: #F29108;" id="tous">TOUS</button>
+				<div class="prem-bout">
+					<div id="but-cont">
+						<button class="but" style="background-color: #AA3614;" id="incub" ></button> INCUBATION
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #D35315;" id="marit" ></button> MARITIME
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #EE7810;" id="socia" ></button> SOCIAL
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #6E473C;" id="terri" ></button> TERRITOIRE
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #E8521F;" id="envir" ></button> ENVIRONNEMENT
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #E30E20;" id="sport" ></button> SPORT
+					</div></br>
+				</div>
+				<div class="deux-bout">
+					<div id="but-cont">
+						<button class="but" style="background-color: #F08574;" id="art" ></button> ART
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #E40C50;" id="pedag" ></button> PEDAGOGIE
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #B2004B;" id="const" ></button> CONSTRUCTION
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #D5328A;" id="cuisi" ></button> CUISINE
+					</div></br>
+					<div id="but-cont">
+						<button class="but" style="background-color: #C795C3;" id="reche" ></button> RECHERCHE
+					</div></br>
+					<div id="but-cont">
+						<button class="tous" style="background-color: #F29108;" id="tous">TOUS</button>
+					</div>
 				</div>
 
 			</section>

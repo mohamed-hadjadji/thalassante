@@ -2,13 +2,24 @@
     
     src: url('../fonts/Nunito-Regular.ttf');
 }
+/*Carrousel*/
 
+.carousel-control.left,
+.carousel-control.right { 
+    margin-right: 150px;
+    margin-left: 95px;
+    background-image: none;
+    opacity: 1;
+    margin-top: -70px;
+}
+/*fin Carrousel*/
 
 .pre-act{
 	
 	background-color: #F29108;
 	color: white;
 	font-family: 'Nunito-Regular', arial;
+	margin-bottom: 100px;
 }
 
 .pre-act h1{
@@ -41,8 +52,9 @@
 
 .bloc-act{
 	display: flex;
+	flex-direction: column-reverse;
     justify-content: space-around;
-    margin: 35px;
+  
 }
 #year{
 	background-color: #F1F8FB;
@@ -72,12 +84,12 @@
 	
 }
 .bo-coul{
-	width: 215px;
-    font-size: 12px;
-    margin-left: 1%;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 100px;
 }
 #but-cont{
-margin-bottom: 50%;	
+
 }
 .but{
 	padding: 20px;	
@@ -96,7 +108,7 @@ margin-bottom: 50%;
 	justify-content: space-around;
 }
 .activites{
-	/*width: 1420px;*/
+	margin-bottom: 40px;
 }
 .cont{
 	width: 200px;
@@ -105,8 +117,8 @@ margin-bottom: 50%;
 	font-family: 'Nunito-Regular', arial;
 }
 .oc-img-get_act-momo{
-	width: 180px;
-	height: 180px;
+	width: 140px;
+	height: 140px;
 }
 .titac{
 	color: #F29108;
@@ -119,6 +131,7 @@ margin-bottom: 50%;
 }
 .text{
 	font-size: 13px;
+	 height: 300px;
 }
 
 #fich a{
@@ -136,8 +149,8 @@ color: white;
     height: 26px;
 }
 #tabact{
-	width: 180px;
-    height: 130px;
+    width: 150px;
+    height: 110px;
 }
 #tabact tr{
 	border-bottom: 4px solid #F1F8FB;	
