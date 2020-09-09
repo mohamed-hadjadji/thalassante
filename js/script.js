@@ -105,7 +105,7 @@ function get_act()
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ function get_act()
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@ function get_act()
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -190,7 +190,7 @@ function get_incub(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@ function get_incub(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -211,7 +211,7 @@ function get_incub(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -253,7 +253,7 @@ function get_marit(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -264,7 +264,7 @@ function get_marit(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -274,7 +274,7 @@ function get_marit(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -316,7 +316,7 @@ function get_social(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -327,7 +327,7 @@ function get_social(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -337,7 +337,7 @@ function get_social(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -379,7 +379,7 @@ function get_territoire(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -390,7 +390,7 @@ function get_territoire(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -400,7 +400,7 @@ function get_territoire(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -442,7 +442,7 @@ function get_environ(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -453,7 +453,7 @@ function get_environ(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -463,7 +463,7 @@ function get_environ(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -505,7 +505,7 @@ function get_sport(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -516,7 +516,7 @@ function get_sport(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -526,7 +526,7 @@ function get_sport(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -568,7 +568,7 @@ function get_art(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -579,7 +579,7 @@ function get_art(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -589,7 +589,7 @@ function get_art(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -631,7 +631,7 @@ function get_pedago(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -642,7 +642,7 @@ function get_pedago(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -652,7 +652,7 @@ function get_pedago(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -694,7 +694,7 @@ function get_construct(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -705,7 +705,7 @@ function get_construct(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -715,7 +715,7 @@ function get_construct(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -757,7 +757,7 @@ function get_cuisine(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -768,7 +768,7 @@ function get_cuisine(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -778,7 +778,7 @@ function get_cuisine(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -820,7 +820,7 @@ function get_recherche(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -831,7 +831,7 @@ function get_recherche(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -841,7 +841,7 @@ function get_recherche(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           
@@ -884,7 +884,7 @@ function get_year(){
           <div id="geta${i}" class="item active">
             <div id="cActivity${i}" class="carousel-col">
               <div class="block">
-                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
               </div>
             </div>
           </div>
@@ -895,7 +895,7 @@ function get_year(){
             <div id="geta${i}" class="item">
               <div class="carousel-col">
                 <div id="cActivity${i}" class="block">
-                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img height="900" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
+                  <div class="imgact"><img class="oc-img-get_act-momo" src="classe/${act[i]["image"]}"></div><div class="titac"><h5 class="titre"><b>${act[i]["titre"]}</b></h5><p class="text">${act[i]["description"]}</p></div><div id="fich"><button id="affic${act[i]['id']}" type="button" class="bo-sav">En savoir plus</button><br/><br/><div id="fic${act[i]['id']}"><img id="fich-act" src="classe/${act[i]["affiche"]}"></div></div><div id="trav"><table id="tabact"><tr><td style="background-color:${act[i]["incubation"]};"></td><td style="background-color:${act[i]["maritime"]};"></td><td style="background-color:${act[i]["social"]};"></td><td style="background-color:${act[i]["territoire"]};"></td></tr><tr><td style="background-color:${act[i]["environ"]};"></td><td style="background-color:${act[i]["sport"]};"></td><td style="background-color:${act[i]["art"]};"></td><td style="background-color:${act[i]["pedago"]};"></td></tr><tr><td style="background-color:${act[i]["construc"]};"></td><td style="background-color:${act[i]["cuisine"]};"></td><td style="background-color:${act[i]["recherche"]};"></td><td></td></tr></table></div>
                 </div>
               </div>
             </div>
@@ -905,7 +905,7 @@ function get_year(){
           var fiche = "#fic"+ act[i]['id'];      
             $(`${fiche}`).dialog({
             autoOpen: false,
-            width: 1030
+            width: 950
           });
             var bofic = "#affic"+ act[i]['id'];
           $(document).on("click", `${bofic}`, function() {                           

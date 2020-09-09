@@ -187,7 +187,7 @@ if(isset($_GET['deconnexion']))
 	   	
 	   		   	   		   </div>
 <!------------------------momo activité -------------------->
-	   		   	   	<?php include "momo_index.php" ?>
+	   		   	   	<?php include "momo_activite.php" ?>
 
 	   		   	   	<article id="oc-ancre-adhésion" class="oc-article-adhesion">
 	   		   	   		<?php include("adhesion.php") ?>

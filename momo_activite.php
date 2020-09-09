@@ -3,8 +3,7 @@
 <html lang="fr">
 	<head>
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-       <link rel="stylesheet" href="css/carousel.css">
-       <link rel="stylesheet" type="text/css" href="css/style.css">
+       <link rel="stylesheet" href="css/carousel-activ.css">
        <link rel="stylesheet" type="text/css" href="css/activite.css">
        <link rel="stylesheet" media="screen and (max-width: 1070px)" href="css/activite-tel.css" type="text/css" />
 
@@ -57,7 +56,7 @@
 							</div>
 							<div class="form-group">
 								<label for="description">DESCRIPTION</label>
-								<textarea type="text" class="form-control" id="email" name="description" rows="6" maxlength="400" placeholder="Ajouter la Description" required></textarea>
+								<textarea type="text" class="form-control" id="email" name="description" rows="6" maxlength="380" placeholder="Ajouter la Description" required></textarea>
 							</div>
 							<div class="custom-file">
 							    <input type="file" class="custom-file-input" id="customFile" name="image" required/>
@@ -150,7 +149,7 @@
 				        <option value="2011">2011</option>
 				        <option value="2010">2010</option>             
 				    </select>
-				    <button id="option">SELECTIONNER</button>
+				    <button id="option"><b>SELECTIONNER</b></button>
 	      
 			</section>
 			<section class="bo-coul">
@@ -191,7 +190,7 @@
 						<button class="but" style="background-color: #C795C3;" id="reche" ></button> RECHERCHE
 					</div></br>
 					<div id="but-cont">
-						<button class="tous" style="background-color: #F29108;" id="tous">TOUS</button>
+						<button class="tous" style="background-color: #F29108;" id="tous"><b>TOUS</b></button>
 					</div>
 				</div>
 
