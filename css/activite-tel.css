@@ -21,12 +21,18 @@
 	font-family: 'Nunito-Regular', arial;
 	margin-bottom: 100px;
 }
+@font-face {
+    
+    src: url('../fonts/poppins/Poppins-Bold.ttf');
+        
+}
 
 .pre-act h1{
 	font-size: 40px;
 	text-align: center;
-	margin-bottom:60px;
+	margin-bottom:30px;
 	padding-top: 5%;
+	font-family: 'Poppins';
 }
 #para-act{
 	display: flex;
@@ -56,9 +62,14 @@
     justify-content: space-around;
   
 }
+.oc-section-date-activite
+{
+  align-self: center;
+
+}
 #year{
 	background-color: #F1F8FB;
-	height: 304px;
+	height: 180px;
 }
 #year::-webkit-scrollbar-thumb{
 	background-color: #F29108;
@@ -68,25 +79,21 @@
 	width: 10px;
    
 }
+@font-face {
+  src: url('../fonts/nunito/Nunito-Light.ttf');
+  font-family: 'Nunito-Light';
+}
 #year option{
+	font-family: 'Nunito-Light';
 	color:#F29108;
-	font-size: 16px;
+	font-size: 20px;
 	
 }
-#option{
-	color: white;
-	font-size: 16px;
-	background-color: #F29108;	
-	border-color: #F29108;
-	width: 70px;
-	height: 30px;
-	margin-top: 15px;
-	
-}
+
 .bo-coul{
 	display: flex;
 	justify-content: space-around;
-	margin-bottom: 100px;
+	margin-bottom: 30px;
 }
 #but-cont{
 
@@ -95,13 +102,7 @@
 	padding: 20px;	
 	border: 0;
 }
-.tous{	
-	color: white;
-    font-size: 13px;
-    border-color: #F29108;
-    height: 36px;
-    width: 70px;
-}
+
 #activ{
 	display: flex;
 	flex-direction: column;
@@ -114,7 +115,7 @@
 	width: 200px;
 	margin: 16px;
 	margin-bottom: 30%;
-	font-family: 'Nunito-Regular', arial;
+	
 }
 .oc-img-get_act-momo{
 	width: 140px;
@@ -123,15 +124,25 @@
 .titac{
 	color: #F29108;
 	padding-top: 15px;
-	width: 95%;
+	width: 100%;
 
 }
+@font-face {
+  src: url('../fonts/nunito/Nunito-Black.ttf');
+  font-family: 'Nunito-Black';
+}
 .titre{
-	font-size: 18px;
+	font-family: 'Nunito-Black';
+	font-size: 16px;
+}
+@font-face {
+  src: url('../fonts/nunito/Nunito-Regular.ttf');
+  font-family: 'Nunito-Regular';
 }
 .text{
-	font-size: 13px;
-	 height: 300px;
+	font-family: 'Nunito-Regular';
+	font-size: 12px;
+	height: 250px;
 }
 
 #fich a{
@@ -141,12 +152,18 @@
    padding: 3px; 
 }
 .bo-sav{
-color: white;
-    font-size: 13px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Nunito-Regular';
     background-color: #F29108;
-    border-color: #F29108;
-    width: 111px;
+    border: 0;
+    width: 110px;
     height: 26px;
+}
+
+#fich-act{
+    width: 600px;
+    height: 700px;
 }
 #tabact{
     width: 150px;
@@ -161,7 +178,24 @@ color: white;
 	border-right: 4px solid #F1F8FB;
 	width: 25%;
 }
-
+#option{
+	color: white;
+	font-size: 15px;
+	background-color: #F29108;	
+	border: 0;
+	width: 130px;
+	height: 30px;
+	margin-top: 15px;
+	font-family: 'Nunito-Regular';
+}
+.tous{
+	font-family: 'Nunito-Regular';
+	color: white;
+    font-size: 15px;
+    border: 0;
+    height: 36px;
+    width: 70px;
+}
 .custom-select
 {
 	border: 0;
